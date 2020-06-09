@@ -38,7 +38,7 @@ docker create \
     --name=unifi-controller \
     --restart unless-stopped \
     -v unifi-controller:/config \
-    -e PUID=1000 -e PGID=1000 \
+    -e PUID=$(id -u $USER) -e PGID=$(id -g $USER) \
     -e MEM_LIMIT=1024M \
     -p 3478:3478/udp \
     -p 10001:10001/udp \
