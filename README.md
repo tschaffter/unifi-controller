@@ -10,7 +10,7 @@ Install the UniFi controller on Raspberry Pi in a secure way.
 - Raspberry Pi 4 Model B 2019 8GB
 - SanDisk Extreme 32GB MicroSDHC UHS-3 Card
 
-## Build Linux kerner with SE support
+## Build Linux kerner with SELinux support
 
 ```console
 docker run \
