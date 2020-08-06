@@ -129,6 +129,12 @@ sudo add-apt-repository \
 sudo apt-get update
 ```
 
+If the Docker service does not start automatically at boot time, run the command
+`systemctl start docker.service`.
+
+Add the Pi user to the group `docker` to run Docker commands without prefixing
+them with `sudo`: `sudo usermod -aG docker <username>`.
+
 References:
 
 - [Happy Pi Day with Docker and Raspberry Pi](https://www.docker.com/blog/happy-pi-day-docker-raspberry-pi/)
