@@ -1,16 +1,19 @@
-# Setup UniFi controller
+# UniFi Controller
 
 <!-- [![GitHub Stars](https://img.shields.io/github/stars/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller)
 [![GitHub License](https://img.shields.io/github/license/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller) -->
 
-Install the UniFi controller on Raspberry Pi in a secure way.
+Installing the UniFi controller on Raspberry Pi in a secure way.
 
 ## Hardware
 
 - Raspberry Pi 4 Model B 2019 8GB
 - SanDisk Extreme 32GB MicroSDHC UHS-3 Card
 
-## Build Linux kerner with SELinux support
+## Build the Linux kerner with SELinux support
+
+Use [tschaffter/raspberry-pi-kernel-hardened](https://github.com/tschaffter/raspberry-pi-kernel-hardened)
+to build the Linux kernel for Raspberry Pi with SELinux support enabled.
 
 ```console
 docker run \
@@ -67,7 +70,10 @@ sestatus
 
 ## Create new user
 
-1. Create the new user `tschaffter` and set its password
+All Raspberry Pis come with the default username `pi`, so changing this will
+immediately make the Raspberry Pi more secure.
+
+1. Create the new user (here `tschaffter`).
 
     ```console
     sudo -s
@@ -79,14 +85,14 @@ sestatus
     passwd ${user}
     ```
 
-2. Logout of the Pi and reconnect using the user `tschaffter`
-3. Delete the user `pi`: `sudo deluser -remove-home pi`
+2. Logout of the Pi and reconnect using the user `tschaffter`.
+3. Delete the user `pi`: `sudo deluser -remove-home pi`.
 
 ## Install Linux kernel with SELinux support
 
-1. Create the folder `/home/${user}/kernel` on the Pi
+1. Create the folder `/home/${user}/kernel` on the Pi.
 2. SSH kernel files to the Pi: `scp linux-*-5.4.y-20200804-hardened*.deb tschaffter@<ip address>:./kernel`
-3. SSH into the pi
+3. SSH into the Pi
 4. Install the new kernel
 
     ```console
@@ -108,7 +114,7 @@ sestatus
     sestatus
     ```
 
-6. Enable SELinux: `sudo vim /etc/selinux/config` and set the mode to `enforcing`
+6. Enable SELinux: `sudo vim /etc/selinux/config` and set the mode to `enforcing`.
 
 ## Install Docker
 
@@ -144,7 +150,7 @@ References:
 
 - [Happy Pi Day with Docker and Raspberry Pi](https://www.docker.com/blog/happy-pi-day-docker-raspberry-pi/)
 
-## Start UniFi Controller
+## Start the UniFi Controller
 
 Clone this GitHub repository on the Pi, then run `sudo ./unifi-controller.sh`.
 This script creates a Docker container named `unifi-controller` and a Docker
