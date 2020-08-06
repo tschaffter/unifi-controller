@@ -1,4 +1,7 @@
-# Setup Unifi controller
+# Setup UniFi controller
+
+[![GitHub Stars](https://img.shields.io/github/stars/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller)
+[![GitHub License](https://img.shields.io/github/license/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller)
 
 ## Hardware
 
@@ -139,7 +142,7 @@ References:
 
 - [Happy Pi Day with Docker and Raspberry Pi](https://www.docker.com/blog/happy-pi-day-docker-raspberry-pi/)
 
-## Start Unifi Controller
+## Start UniFi Controller
 
 Clone this GitHub repository on the Pi, then run `sudo ./unifi-controller.sh`.
 This script creates a Docker container named `unifi-controller` and a Docker
