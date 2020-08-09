@@ -4,6 +4,7 @@
 #
 #   Runs the latest version of the unifi controller.
 #
+
 test -f /etc/systemd/system/unifi-controller.service ||
 {
 apt-get update && apt-get install docker.io
