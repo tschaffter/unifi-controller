@@ -3,17 +3,36 @@
 [![GitHub Stars](https://img.shields.io/github/stars/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller)
 [![GitHub License](https://img.shields.io/github/license/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller)
 
-Installing the UniFi controller on Raspberry Pi in a secure way.
+Installing the UniFi Controller on Raspberry Pi in a secure way.
 
 ## Hardware
 
 - Raspberry Pi 4 Model B 2019 8GB
 - SanDisk Extreme 32GB MicroSDHC UHS-3 Card
 
+## What is SELinux?
+
+Security-Enhanced Linux (SELinux) is a mandatory access control (MAC) security
+mechanism implemented in the kernel. By default under a strict `enforcing` setting,
+everything is denied and then a series of exceptions policies are written that
+give each element of the system (a service, program or user) only the access
+required to function. If a service, program or user subsequently tries to access
+or modify a file or resource (e.g. memory) not necessary for it to function,
+then access is denied and the action is logged.
+
+A more in-depth descirption of SELinux can be found [here][selinux].
+
 ## Build the Linux kerner with SELinux support
 
-Use [tschaffter/raspberry-pi-kernel-hardened](https://github.com/tschaffter/raspberry-pi-kernel-hardened)
-to build the Linux kernel for Raspberry Pi with SELinux support enabled.
+As of August 2020, the linux kernel shipped with Raspberry Pi OS does not support
+SELinux. We use the dockerized tool [tschaffter/raspberry-pi-kernel-hardened][gh_hardened_kernel]
+to cross-compile the Linux kernel with SELinux support.
+
+Run the following command on any host that has the Docker Engine installed to
+build three .deb packages that will be used to install the hardened kernel on a
+Raspberry Pi 4. Have a look at the README of [tschaffter/raspberry-pi-kernel-hardened][gh_hardened_kernel]
+for detailed information about the build options and how to build an hardened
+kernel for other versions of the Raspberry Pi.
 
 ```console
 docker run \
@@ -22,7 +41,7 @@ docker run \
     tschaffter/raspberry-pi-kernel-hardened \
         --kernel-branch rpi-5.4.y \
         --kernel-defconfig bcm2711_defconfig \
-        --kernel-localversion 5.4.y-20200804-hardened
+        --kernel-localversion 5.4.y-$(date '+%Y%m%d')-hardened
 ...
 
 Moving .deb packages to /output
@@ -217,3 +236,9 @@ The web interface of the UniFi controller should now be available:
 <!-- markdownlint-disable MD034 -->
 - https://<ip_address>:8443
 - http://<ip_address>:8080
+
+
+<!-- Definitions -->
+
+[gh_hardened_kernel]: https://github.com/tschaffter/raspberry-pi-kernel-hardened
+[selinux]: https://wiki.centos.org/HowTos/SELinux
