@@ -1,7 +1,7 @@
 # UniFi Controller
 
-<!-- [![GitHub Stars](https://img.shields.io/github/stars/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller)
-[![GitHub License](https://img.shields.io/github/license/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller) -->
+[![GitHub Stars](https://img.shields.io/github/stars/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller)
+[![GitHub License](https://img.shields.io/github/license/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller)
 
 Installing the UniFi controller on Raspberry Pi in a secure way.
 
