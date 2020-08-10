@@ -179,7 +179,7 @@ Make sure that the Docker service starts automatically at boot time:
 sudo systemctl start docker.service
 ```
 
-Finally add the Pi user to the group `docker` to run Docker commands without
+Finally add the user to the group `docker` to run Docker commands without
 prefixing them with `sudo`.
 
 ```console
@@ -250,8 +250,8 @@ References:
 
 This error has been encountered in the version `5.12.72-ls61` of the Docker image
 [linuxserver/unifi-controller][unifi_controller_docker]. This error prevents the
-controller to communicate with Ubiquiti server, for example to check and download
-the latest firmware for the UniFi devices (USB, Switch, AP, etc.).
+controller to communicate with Ubiquiti servers, for example to check and download
+the latest firmware for the UniFi devices (USG, Switch, AP, etc.).
 
 The following command will fix the running container:
 
