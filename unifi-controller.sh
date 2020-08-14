@@ -6,7 +6,7 @@
 #
 
 controller_image="linuxserver/unifi-controller"
-controller_version="5.12.72-ls61"
+controller_version="latest"
 
 test -f /etc/systemd/system/unifi-controller.service ||
 {
