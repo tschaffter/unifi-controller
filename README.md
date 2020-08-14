@@ -93,12 +93,12 @@ Ethernet cable:
 2. Change the password: `passwd`
 3. Update the Pi: `sudo apt update && sudo apt -y upgrade`
 
-## Create a new user
+### Change your username
 
 The default user on the Pi is named `pi`. It is recommended to create a new user
 before removing the user `pi` for better security.
 
-1. Create the new user.
+1. Create the new user (replace `bob` by your own username).
 
         sudo -s
         export user=bob
@@ -209,6 +209,11 @@ unauthorized remote connections. The ports opened below include SSH and the port
     sudo ufw allow 3478,10001,8080,8443  # required by the controller
     sudo ufw enable
 
+## Secure your Raspberry Pi even more
+
+This excellent [article][secure_pi] from raspberrypi.org provides additional
+tips to secure your Pi.
+
 ## Access Unifi Controller web interface
 
 The web interface of the UniFi controller should now be available at the addresses:
@@ -233,3 +238,4 @@ The web interface of the UniFi controller should now be available at the address
 [unifi_controller_docker]: https://hub.docker.com/r/linuxserver/unifi-controller
 [issue_6]: https://github.com/tschaffter/unifi-controller/issues/6
 [issue_7]: https://github.com/tschaffter/unifi-controller/issues/7
+[secure_pi]: https://www.raspberrypi.org/documentation/configuration/security.md
