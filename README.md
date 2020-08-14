@@ -227,6 +227,10 @@ The web interface of the UniFi controller should now be available at the address
 - ["OpenJDK Client VM warning: INFO: os::commit_memory"][issue_6]
 - ["OpenJDK Client VM warning: libubnt_webrtc_jni.so"][issue_7]
 
+## Contributing change
+
+Please read the [`CONTRIBUTING.md`](CONTRIBUTING.md) for details on how to
+contribute to this project.
 
 <!-- Definitions -->
 
