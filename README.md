@@ -200,16 +200,14 @@ strategies:
 ## Setup UFW
 
 Install and configure UFW (Uncomplicated Firewall) to protect the Pi against
-unauthorized remote connections. The ports opened here include SSH and the ports
+unauthorized remote connections. The ports opened below include SSH and the ports
 [required by the UniFi controller](https://hub.docker.com/r/linuxserver/unifi-controller).
 
-```console
-sudo apt-get install -y ufw
-sudo ufw status
-sudo ufw allow ssh
-sudo ufw allow 3478,10001,8080,8443  # required by the controller
-sudo ufw enable
-```
+    sudo apt-get install -y ufw
+    sudo ufw status
+    sudo ufw allow ssh
+    sudo ufw allow 3478,10001,8080,8443  # required by the controller
+    sudo ufw enable
 
 ## Access Unifi Controller web interface
 
@@ -221,8 +219,8 @@ The web interface of the UniFi controller should now be available at the address
 
 ## Known issues
 
-- "OpenJDK Client VM warning: INFO: os::commit_memory" (#6)
-- "OpenJDK Client VM warning: libubnt_webrtc_jni.so" (#7)
+- ["OpenJDK Client VM warning: INFO: os::commit_memory"][issue_6]
+- ["OpenJDK Client VM warning: libubnt_webrtc_jni.so"][issue_7]
 
 
 <!-- Definitions -->
@@ -231,8 +229,7 @@ The web interface of the UniFi controller should now be available at the address
 [unifi_cloud_key]: https://www.ui.com/unifi/unifi-cloud-key/
 [gh_hardened_kernel]: https://github.com/tschaffter/raspberry-pi-kernel-hardened
 [selinux]: https://wiki.centos.org/HowTos/SELinux
-<!-- [kodi]: https://kodi.tv/
-[steamlink]: https://store.steampowered.com/steamlink/about/
-[retropie]: https://retropie.org.uk/ -->
 [pi_imager]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md
 [unifi_controller_docker]: https://hub.docker.com/r/linuxserver/unifi-controller
+[issue_6]: https://github.com/tschaffter/unifi-controller/issues/6
+[issue_7]: https://github.com/tschaffter/unifi-controller/issues/7
