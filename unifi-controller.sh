@@ -38,7 +38,7 @@ systemctl enable unifi-controller
 
 # Update the docker container
 # Only the ports marked as `Required` in the image documentation are mapped
-docker pull linuxserver/unifi-controller:${controller_version}
+docker pull ${controller_image}:${controller_version}
 docker stop unifi-controller
 docker rm unifi-controller
 docker create \
@@ -52,6 +52,6 @@ docker create \
     -p 10001:10001/udp \
     -p 8080:8080 \
     -p 8443:8443 \
-    linuxserver/unifi-controller:${controller_version}
+    ${controller_image}:${controller_version}
 docker start unifi-controller
 docker image prune
