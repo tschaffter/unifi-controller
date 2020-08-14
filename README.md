@@ -209,7 +209,7 @@ unauthorized remote connections. The ports opened below include SSH and the port
     sudo ufw allow 3478,10001,8080,8443  # required by the controller
     sudo ufw enable
 
-## Secure your Raspberry Pi even more
+## Futher secure your Raspberry Pi
 
 This excellent [article][secure_pi] from raspberrypi.org provides additional
 tips to secure your Pi.
