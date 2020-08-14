@@ -84,7 +84,7 @@ On Windows 10 using Windows Subsystem for Linux (WSL):
     touch /mnt/d/ssh
     sudo umount /mnt/d/
 
-## SSH into the Pi
+## First login
 
 After placing the SD card into the Pi and connecting it to the network using an
 Ethernet cable:
@@ -168,7 +168,7 @@ started by looking at the logs of the Docker container (stdout).
     [services.d] starting services
     [services.d] done.
 
-See the section **Known issues** (below) if any error messages show up.
+See the section [Known issues](#known-issues) if any error messages show up.
 
 ### Never turn off the Pi by unplugging its power adapter
 
