@@ -20,8 +20,8 @@ After=docker.service
 Requires=docker.service
 
 [Service]
-User=$(id -u $USER)
-Group=$(id -g $USER)
+User=nobody
+Group=docker
 TimeoutStartSec=0
 Restart=always
 # Should this service check for container updates first?
@@ -45,8 +45,8 @@ docker create \
     --name=unifi-controller \
     --restart unless-stopped \
     -v unifi-controller:/config \
-    -e PUID=$(id -u $USER) \
-    -e PGID=$(id -g $USER) \
+    -e PUID=$(id -u nobody) \
+    -e PGID=$(id -g nobody) \
     -e MEM_LIMIT=1024M \
     -p 3478:3478/udp \
     -p 10001:10001/udp \
