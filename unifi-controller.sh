@@ -6,7 +6,7 @@
 #
 
 controller_image="linuxserver/unifi-controller"
-controller_version="latest"
+controller_version="latest"  # recommended: use tagged version like "version-6.0.43" for reproducibility
 
 test -f /etc/systemd/system/unifi-controller.service ||
 {
