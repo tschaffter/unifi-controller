@@ -1,6 +1,5 @@
 # UniFi Controller
 
-[![GitHub Stars](https://img.shields.io/github/stars/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller)
 [![GitHub License](https://img.shields.io/github/license/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller)
 
 Deploy the [UniFi Controller][unifi_controller] on an hardened Raspberry Pi for
@@ -20,25 +19,26 @@ secure alternative to buying a [Cloud Key][unifi_cloud_key] from Ubiquiti.
 ## What is SELinux?
 
 Security-Enhanced Linux (SELinux) is a mandatory access control (MAC) security
-mechanism implemented in the kernel. By default under a strict `enforcing` setting,
-everything is denied and then a series of exceptions policies are written that
-give each element of the system (a service, program or user) only the access
-required to function. If a service, program or user subsequently tries to access
-or modify a file or resource (e.g. memory) not necessary for it to function,
-then access is denied and the action is logged.
+mechanism implemented in the kernel. By default under a strict `enforcing`
+setting, everything is denied and then a series of exceptions policies are
+written that give each element of the system (a service, program or user) only
+the access required to function. If a service, program or user subsequently
+tries to access or modify a file or resource (e.g. memory) not necessary for it
+to function, then access is denied and the action is logged.
 
 A more in-depth descirption of SELinux is available [here][selinux].
 
 ## Build the Linux kerner with SELinux support
 
 As of August 2020, the linux kernel shipped with the Raspberry Pi OS does not
-include the security module SELinux. Here we are going to cross-compile the kernel
-with SELinux enabled using the tool [tschaffter/raspberry-pi-kernel-hardened][gh_hardened_kernel].
+include the security module SELinux. Here we are going to cross-compile the
+kernel with SELinux enabled using the tool
+[tschaffter/raspberry-pi-kernel-hardened][gh_hardened_kernel].
 
 This single command builds the kernel for a Raspberry Pi 4. This command can be
 run on any computer that has the Docker installed. Note that this tool uses all
-the CPU cores available to the container to speed up the cross-compilation of the
-kernel, which by default are all the CPU cores of the host.
+the CPU cores available to the container to speed up the cross-compilation of
+the kernel, which by default are all the CPU cores of the host.
 
     mkdir -p output && docker run \
         --rm \
@@ -113,8 +113,8 @@ before removing the user `pi` for better security.
 
 ## Install the Linux kernel with SELinux support
 
-1. Create the folder `/home/<user>/kernel` on the Pi and place the `*deb` packages
-   of the hardened kernel there (e.g. using `scp`).
+1. Create the folder `/home/<user>/kernel` on the Pi and place the `*deb`
+   packages of the hardened kernel there (e.g. using `scp`).
 2. Install the new kernel (copy/paste the commands given by the kernel builder).
 
         sudo dpkg -i ~/kernel/linux-*-20200804-hardened*.deb
@@ -159,8 +159,8 @@ Controller in a Docker container and creates a systemd service. This service
 ensures that the controller is started at boot and properly stopped when the Pi
 is turned off.
 
-After running `./unifi-controller.sh`, check that the controller has successfully
-started by looking at the logs of the Docker container (stdout).
+After running `./unifi-controller.sh`, check that the controller has
+successfully started by looking at the logs of the Docker container (stdout).
 
     $ docker logs unifi-controller
     ...
@@ -200,8 +200,9 @@ strategies:
 ## Setup UFW
 
 Install and configure UFW (Uncomplicated Firewall) to protect the Pi against
-unauthorized remote connections. The ports opened below include SSH and the ports
-[required by the UniFi controller](https://hub.docker.com/r/linuxserver/unifi-controller).
+unauthorized remote connections. The ports opened below include SSH and the
+ports [required by the UniFi
+controller](https://hub.docker.com/r/linuxserver/unifi-controller).
 
     sudo apt-get install -y ufw
     sudo ufw status
@@ -216,7 +217,8 @@ tips to secure your Pi.
 
 ## Access Unifi Controller web interface
 
-The web interface of the UniFi controller should now be available at the addresses:
+The web interface of the UniFi controller should now be available at the
+addresses:
 
 <!-- markdownlint-disable MD034 -->
 - https://<controller_address>:8443
@@ -227,10 +229,18 @@ The web interface of the UniFi controller should now be available at the address
 - ["OpenJDK Client VM warning: INFO: os::commit_memory" (solved)][issue_6]
 - ["OpenJDK Client VM warning: libubnt_webrtc_jni.so" (solved)][issue_7]
 
-## Contributing change
+## Contributing
 
-Please read the [`CONTRIBUTING.md`](CONTRIBUTING.md) for details on how to
-contribute to this project.
+Thinking about contributing to this project? Get started by reading our
+[Contributor Guide](CONTRIBUTING.md).
+
+## License
+
+[Apache License 2.0]
+
+<!-- Links -->
+
+[Apache License 2.0]: https://github.com/tschaffter/unifi-controller/blob/main/LICENSE
 
 <!-- Definitions -->
 
