@@ -3,7 +3,7 @@
 [![GitHub License](https://img.shields.io/github/license/tschaffter/unifi-controller.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/unifi-controller)
 
 Deploy the [UniFi Controller][unifi_controller] on an hardened Raspberry Pi for
-enhanced security.
+enhanced security
 
 ## Motivation
 
