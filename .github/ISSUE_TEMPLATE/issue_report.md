@@ -1,7 +1,7 @@
 ---
 name: Issue report
 about: Report a problem with this project or its documentation
-labels: bug
+labels: Bug
 ---
 
 <!--
