@@ -6,7 +6,7 @@
 #
 
 controller_image="linuxserver/unifi-controller"
-controller_version="version-6.0.45"  # see https://hub.docker.com/r/linuxserver/unifi-controller/tags
+controller_version="version-x.y.z"  # See https://hub.docker.com/r/linuxserver/unifi-controller/tags
 
 test -f /etc/systemd/system/unifi-controller.service ||
 {
