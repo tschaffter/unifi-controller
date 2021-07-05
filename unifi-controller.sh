@@ -54,4 +54,4 @@ docker create \
     -p 8443:8443 \
     ${controller_image}:${controller_version}
 docker start unifi-controller
-docker image prune --all
+docker image prune --all --force
